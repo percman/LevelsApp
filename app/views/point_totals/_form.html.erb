@@ -1,0 +1,55 @@
+<%= form_for [@student, @point_total], :html => { :class => "form-horizontal point_total" } do |f| %>
+
+  <% if @point_total.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@point_total.errors.count, "error") %> prohibited this point_total from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @point_total.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :student_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select(:student_id, Student.all, :id, :last_first, prompt: true, selected: @point_total.student_id) %>
+    </div>
+    <%=f.error_span(:student_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.date_select :date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :score, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :score, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:score) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :absent, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :absent, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:absent) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                student_point_totals_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

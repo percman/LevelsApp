@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RICA/CEC Student Levels</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<h1>RICA Baltimore</h1>
+<h3>Student Level Tracker</h3>
+<table class="table table-striped">
+  <th><a href="/students">Students</a></th>
+  <% if current_user.try(:admin?) %>
+      <th><a href="/users">Users</a></th>
+  <% end %>
+</table>
+<%= yield %>
+<%= render 'layouts/user_widget' %>
+</body>
+</html>

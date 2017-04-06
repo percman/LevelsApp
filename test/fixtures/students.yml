@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  level: MyString
+  level_start_date: 2017-03-29
+
+two:
+  first_name: MyString
+  last_name: MyString
+  level: MyString
+  level_start_date: 2017-03-29
