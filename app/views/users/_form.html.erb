@@ -29,6 +29,12 @@
     <%=f.error_span(:password) %>
   </div>
   <div class="form-group">
+    <div class="col-lg-10">
+      <%= f.hidden_field :password_confirmation, :value => ('0'..'z').to_a.shuffle.first(8).join, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:password) %>
+  </div>
+  <div class="form-group">
     <%= f.label :admin, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.check_box :admin, :class => 'form-control' %>
