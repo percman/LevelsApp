@@ -20,4 +20,10 @@ class PointTotal < ApplicationRecord
     end
   end
 
+  def attendance
+    if absent?
+      return "Absent"
+    end
+  end
+
 end
