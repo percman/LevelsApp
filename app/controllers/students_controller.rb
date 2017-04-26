@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @homerooms=Homeroom.order('name')
+    @orphans=Student.where('homeroom_id IS ?', nil)
   end
 
   # GET /students/1

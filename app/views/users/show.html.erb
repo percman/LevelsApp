@@ -9,6 +9,10 @@
     <dd><%= @user.email %></dd>
     <dt><strong><%= model_class.human_attribute_name(:admin) %>:</strong></dt>
     <dd><%= @user.admin %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+    <dd><%= @user.category %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:student) %>:</strong></dt>
+    <dd><%= @user.student.try(:last_first) %></dd>
   </dl>
 
   <%= link_to t('.back', :default => t("helpers.links.back")),

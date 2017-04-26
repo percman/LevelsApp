@@ -47,7 +47,7 @@
   <div class="form-group">
     <%= f.label :homeroom_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.collection_select(:homeroom_id, Homeroom.all, :id, :name, prompt: true, selected: @student.homeroom_id) %>
+      <%= f.collection_select(:homeroom_id, Homeroom.all, :id, :name, prompt: true, selected: @student.homeroom_id, :include_blank=>true) %>
     </div>
     <%=f.error_span(:homeroom_id) %>
   </div>

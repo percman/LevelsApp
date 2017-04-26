@@ -8,6 +8,8 @@
       <tr>
         <th><%= model_class.human_attribute_name(:email) %></th>
         <th><%= model_class.human_attribute_name(:admin) %></th>
+        <th><%= model_class.human_attribute_name(:category) %></th>
+        <th><%= model_class.human_attribute_name(:student) %></th>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
     </thead>
@@ -16,6 +18,8 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= user.admin %></td>
+          <td><%= user.category %></td>
+          <td><%= user.student.try(:last_first) %></td>
           <td>
             <%= link_to t('.show', :default => t("helpers.links.show")),
                         user_path(user), :class => 'btn btn-default btn-xs' %>

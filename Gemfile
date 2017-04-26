@@ -5,9 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'devise'
+gem 'devise', '4.2.0'
 gem 'therubyracer'
-gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise_invitable', '~> 1.7.0'
 gem 'simple_form'

@@ -44,6 +44,22 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :category, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.select :category, ['Administrator','Staff','Parent'] %>
+      </div>
+      <%=f.error_span(:category) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :student, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.collection_select(:student_id, Student.all, :id, :last_first, prompt: true, selected: @user.student_id, :include_blank=>true) %>
+      </div>
+      <%=f.error_span(:student_id) %>
+    </div>
+
+    <div class="form-group">
       <div class="col-lg-offset-2 col-lg-10">
         <%= f.submit nil, :class => 'btn btn-primary' %>
         <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

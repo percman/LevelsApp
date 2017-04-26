@@ -1,9 +1,10 @@
 class Student < ApplicationRecord
   has_many :point_totals, dependent: :destroy
-  belongs_to :homeroom
-  validates :last_name, :first_name, :level, :level_start_date, :homeroom_id, presence: true
+  has_one :user, dependent: :destroy
+  belongs_to :homeroom, optional: true
+  validates :last_name, :first_name, :level, :level_start_date, presence: true
   validates :level_start_date, date: true
-  accepts_nested_attributes_for :point_totals
+  accepts_nested_attributes_for :point_totals, :user
   def last_first
     "#{last_name}, #{first_name}"
   end
