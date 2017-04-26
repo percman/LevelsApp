@@ -45,6 +45,14 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :homeroom_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select(:homeroom_id, Homeroom.all, :id, :name, prompt: true, selected: @student.homeroom_id) %>
+    </div>
+    <%=f.error_span(:homeroom_id) %>
+  </div>
+
+  <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

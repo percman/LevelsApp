@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330202538) do
+ActiveRecord::Schema.define(version: 20170426010920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "homerooms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "point_totals", force: :cascade do |t|
     t.integer  "student_id"
@@ -32,6 +38,8 @@ ActiveRecord::Schema.define(version: 20170330202538) do
     t.date     "level_start_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "homeroom_id"
+    t.index ["homeroom_id"], name: "index_students_on_homeroom_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +71,5 @@ ActiveRecord::Schema.define(version: 20170330202538) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "students", "homerooms"
 end
