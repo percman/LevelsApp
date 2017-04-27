@@ -1,5 +1,5 @@
+<% if can? :manage, PointTotal %>
 <%= form_for [@student, @point_total], :html => { :class => "form-horizontal point_total" } do |f| %>
-
   <% if @point_total.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -52,4 +52,5 @@
     </div>
   </div>
 
+<% end %>
 <% end %>

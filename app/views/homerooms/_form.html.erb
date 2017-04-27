@@ -1,3 +1,4 @@
+<% if can? :manage, Homeroom %>
 <%= form_for @homeroom, :html => { :class => "form-horizontal homeroom" } do |f| %>
 
     <% if @homeroom.errors.any? %>
@@ -31,4 +32,5 @@
       </div>
     </div>
 
+<% end %>
 <% end %>

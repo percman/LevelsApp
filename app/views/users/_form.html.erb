@@ -1,4 +1,4 @@
-<% if current_user.try(:admin?) %>
+<% if can? :manage, User %>
   <%= form_for @user, :html => { :class => "form-horizontal user" } do |f| %>
 
     <% if @user.errors.any? %>

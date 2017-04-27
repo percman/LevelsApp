@@ -1,3 +1,4 @@
+<% if can? :manage, PointTotal %>
 <%- model_class = PointTotal -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
@@ -23,3 +24,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+<% end %>

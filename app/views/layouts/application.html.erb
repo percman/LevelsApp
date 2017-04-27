@@ -13,8 +13,10 @@
 <h3>Student Level Tracker</h3>
 <table class="table table-striped">
   <th><a href="/students">Students</a></th>
-  <th><a href="/homerooms">Homerooms</a></th>
-  <% if current_user.try(:admin?) %>
+  <% if can? :read, Homeroom %>
+    <th><a href="/homerooms">Homerooms</a></th>
+  <% end %>
+  <% if can? :manage, User %>
       <th><a href="/users">Users</a></th>
   <% end %>
 </table>
