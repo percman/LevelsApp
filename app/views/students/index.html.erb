@@ -90,31 +90,5 @@
             :class => 'btn btn-primary' %>
 
 <% elsif can? :read, Student %>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th><%= model_class.human_attribute_name(:last_name) %></th>
-        <th><%= model_class.human_attribute_name(:first_name) %></th>
-        <th><%= model_class.human_attribute_name(:level) %></th>
-        <th><%= model_class.human_attribute_name(:level_increase) %></th>
-        <th><%= model_class.human_attribute_name(:keep_level) %></th>
-        <th><%= model_class.human_attribute_name(:level_start_date) %></th>
-        <th><%=t '.actions', :default => t("helpers.actions") %></th>
-      </tr>
-      </thead>
-    <tbody>
-    <tr>
-      <td><%= current_user.student.last_name %></td>
-      <td><%= current_user.student.first_name %></td>
-      <td><%= current_user.student.level %></td>
-      <td><%= current_user.student.earn_level %></td>
-      <td><%= current_user.student.keep_level %></td>
-      <td><%= current_user.student.level_start_date.to_formatted_s(:long) %></td>
-      <td>
-        <%= link_to t('.all_records', :default=>t("helpers.links.records")),
-                    student_point_totals_path(current_user.student.id), :class=>'btn btn-default btn-xs' %>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+Test
 <% end %>
