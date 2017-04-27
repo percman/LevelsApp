@@ -6,7 +6,6 @@ class PointTotalsController < ApplicationController
   def index
     @student=Student.find(params[:student_id])
     @point_totals = @student.point_totals.order("date DESC")
-    @parent_point = current_user.student.point_totals.order("date DESC")
   end
 
   # GET /point_totals/1
