@@ -50,37 +50,5 @@
             new_student_point_total_path,
             :class => 'btn btn-primary' %>
 <% elsif can? :read, PointTotal %>
-    <div class="page-header">
-      <h1><%=t '.title', :default => current_user.student.last_first %></h1>
-      <h5>Level: <%= current_user.student.level %></h5>
-      <h5>Level Start Date: <%= current_user.student.level_start_date.to_formatted_s(:long) %></h5>
-    </div>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th><%= model_class.human_attribute_name(:date) %></th>
-        <th><%= model_class.human_attribute_name(:score) %></th>
-        <th><%= model_class.human_attribute_name(:attendance) %></th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @parent_point.each do |point_total| %>
-          <tr>
-            <td><%= point_total.date.to_formatted_s(:long) %></td>
-            <% if point_total.date>=point_total.student.level_start_date %>
-                <% if point_total.successful=='yes' %>
-                    <td class="green"><%= point_total.score %></td>
-                <% elsif point_total.successful=='no' %>
-                    <td class="red"><%= point_total.score %></td>
-                <% else %>
-                    <td><%= point_total.score %></td>
-                <%end %>
-            <% else %>
-                <td><%= point_total.score %></td>
-            <% end %>
-            <td><%= point_total.attendance %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+Test
 <% end %>
