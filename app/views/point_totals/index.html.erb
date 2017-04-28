@@ -49,7 +49,7 @@
     <% end %>
   </tbody>
 </table>
-<% if can? :manage, Point Total %>
+<% if can? :manage, PointTotal %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_student_point_total_path,
             :class => 'btn btn-primary' %>
