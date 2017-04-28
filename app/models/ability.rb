@@ -10,7 +10,7 @@ class Ability
     elsif user.category=='Staff'
       can :manage, [Student, Homeroom, PointTotal]
     elsif user.category=='Parent'
-      can :read, PointTotal, :student_id=>user.student_id
+      can :read, PointTotal, :id=>user.student_id
       can :read, Student
     end
     #
