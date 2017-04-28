@@ -7,7 +7,6 @@
     <thead>
       <tr>
         <th><%= model_class.human_attribute_name(:email) %></th>
-        <th><%= model_class.human_attribute_name(:admin) %></th>
         <th><%= model_class.human_attribute_name(:category) %></th>
         <th><%= model_class.human_attribute_name(:student) %></th>
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -17,7 +16,6 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= user.email %></td>
-          <td><%= user.admin %></td>
           <td><%= user.category %></td>
           <td><%= user.student.try(:last_first) %></td>
           <td>

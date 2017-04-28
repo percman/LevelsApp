@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order('category')
+    @users = User.order('category, email')
   end
 
   # GET /users/1
@@ -72,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {}).permit(:email, :password, :admin, :category, :student_id)
+      params.fetch(:user, {}).permit(:email, :password, :category, :student_id)
     end
 end
