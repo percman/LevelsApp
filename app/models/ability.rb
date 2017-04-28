@@ -11,7 +11,7 @@ class Ability
       can :manage, [Student, Homeroom, PointTotal]
     elsif user.category=='Parent'
       can :read, PointTotal, :student_id=>user.student_id
-      can :read, Student, :id=>user.student_id
+      can :read, Student
     end
     #
     # The first argument to `can` is the action you are giving the user 

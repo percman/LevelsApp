@@ -1,5 +1,5 @@
 <%- model_class = PointTotal -%>
-<% if can? :manage, PointTotal %>
+<% if can? :read, PointTotal %>
 <div class="page-header">
   <h1><%=t '.title', :default => @student.last_first %></h1>
   <h5>Level: <%= @student.level %></h5>
@@ -11,7 +11,9 @@
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:score) %></th>
       <th><%= model_class.human_attribute_name(:attendance) %></th>
+      <% if can? :manage, PointTotal %>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -30,6 +32,7 @@
           <td><%= point_total.score %></td>
         <% end %>
         <td><%= point_total.attendance %></td>
+        <% if can? :manage, PointTotal %>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       student_point_total_path(@student, point_total), :class => 'btn btn-default btn-xs' %>
@@ -41,14 +44,14 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% if can? :manage, Point Total %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_student_point_total_path,
             :class => 'btn btn-primary' %>
-<% elsif can? :read, PointTotal %>
-Test
+<% end %>
 <% end %>
