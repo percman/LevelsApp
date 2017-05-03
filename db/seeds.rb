@@ -9,3 +9,4 @@ principal=User.new
 principal.email='lori.thalheimer@maryland.gov'
 principal.password='Administrator'
 principal.password_confirmation='Administrator'
+principal.category='Administrator'
