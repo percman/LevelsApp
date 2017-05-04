@@ -12,7 +12,7 @@ class PointTotal < ApplicationRecord
     end
     if (student.level=='1' && score>=70) || ((student.level=='2'||student.level=='OR')&&score>=80)||(student.level=='3'&& score>=85)
       return "yes"
-    elsif score>=85
+    elsif score>=90
       return "yes"
     else
       return "no"

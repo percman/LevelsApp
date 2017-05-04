@@ -22,7 +22,7 @@ class Student < ApplicationRecord
     elsif level=='4'
       must_succeed=25
       out_of=28
-    else return
+    else return 'N/A'
     end
     return solve(must_succeed, out_of)
   end
