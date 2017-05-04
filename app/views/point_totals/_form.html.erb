@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :student_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.collection_select(:student_id, Student.all, :id, :last_first, prompt: true, selected: @point_total.student_id) %>
+      <%= f.collection_select(:student_id, Student.order('last_name, first_name'), :id, :last_first, prompt: true, selected: @point_total.student_id) %>
     </div>
     <%=f.error_span(:student_id) %>
   </div>

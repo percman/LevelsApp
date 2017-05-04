@@ -47,7 +47,7 @@
     <div class="form-group">
       <%= f.label :student, :class => 'control-label col-lg-2' %>
       <div class="col-lg-10">
-        <%= f.collection_select(:student_id, Student.all, :id, :last_first, prompt: true, selected: @user.student_id, :include_blank=>true) %>
+        <%= f.collection_select(:student_id, Student.order('last_name, first_name'), :id, :last_first, prompt: true, selected: @user.student_id, :include_blank=>true) %>
       </div>
       <%=f.error_span(:student_id) %>
     </div>
