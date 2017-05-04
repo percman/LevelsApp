@@ -12,7 +12,7 @@
   <dt><strong><%= model_class.human_attribute_name(:score) %>:</strong></dt>
   <dd><%= @point_total.score %></dd>
   <dt><strong><%= model_class.human_attribute_name(:absent) %>:</strong></dt>
-  <dd><%= @point_total.absent %></dd>
+  <dd><%= @point_total.attendance %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
