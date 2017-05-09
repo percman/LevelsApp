@@ -1,7 +1,7 @@
 <%- model_class = Student -%>
 <% if can? :manage, Student %>
     <h2>Students</h2>
-    <h4>Organized by Level</h4>
+    <h4>Alphabetical Order</h4>
     <table class="table table-striped">
       <thead>
       <tr>
@@ -40,4 +40,7 @@
       <% end %>
       </tbody>
     </table>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_student_path,
+                :class => 'btn btn-primary' %>
 <% end %>
