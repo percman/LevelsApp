@@ -11,19 +11,23 @@
 <body>
 <h1>RICA Baltimore</h1>
 <h3>Student Level Tracker</h3>
-<table class="table table-striped">
-  <th><a href="/students">Home</a></th>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav nav-pills nav-justified">
+  <li class="nav-item active"><a href="/students">Home</a></li>
   <% if can? :manage, Student %>
-      <th><a href="/changes">Level Changes</a></th>
-      <th><a href="/levels">Levels</a></th>
+      <li role="presentation"><a href="/changes">Level Changes</a></li>
+      <li role="presentation"><a href="/levels">Levels</a></li>
   <% end %>
   <% if can? :read, Homeroom %>
-      <th><a href="/homerooms">Homerooms</a></th>
+      <li role="presentation"><a href="/homerooms">Homerooms</a></li>
   <% end %>
   <% if can? :manage, User %>
-      <th><a href="/users">Users</a></th>
+      <li role="presentation"><a href="/users">Users</a></li>
   <% end %>
-</table>
+    </ul>
+  </div>
+</nav>
 <%= yield %>
 <%= render 'layouts/user_widget' %>
 </body>
