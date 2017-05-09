@@ -5,6 +5,10 @@
   <h5>Level: <%= @student.level %></h5>
   <h5>Level Start Date: <%= @student.level_start_date.to_formatted_s(:long) %></h5>
 </div>
+
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_student_point_total_path,
+                :class => 'btn btn-primary' %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -45,9 +49,6 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_student_point_total_path,
-            :class => 'btn btn-primary' %>
 
 <% elsif can? :read, PointTotal %>
   <% if @student.id==current_user.student_id %>

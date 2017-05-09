@@ -13,8 +13,12 @@
 <h3>Student Level Tracker</h3>
 <table class="table table-striped">
   <th><a href="/students">Home</a></th>
+  <% if can? :manage, Student %>
+      <th><a href="/changes">Level Changes</a></th>
+      <th><a href="/list">Student List</a></th>
+  <% end %>
   <% if can? :read, Homeroom %>
-    <th><a href="/homerooms">Homerooms</a></th>
+      <th><a href="/homerooms">Homerooms</a></th>
   <% end %>
   <% if can? :manage, User %>
       <th><a href="/users">Users</a></th>

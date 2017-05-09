@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :point_totals
   end
   resources :users
+  get 'changes', to: 'changes#index'
+  get 'list', to: 'list#index'
   root to: 'students#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
