@@ -78,7 +78,7 @@ class PointTotalsController < ApplicationController
       @point_total = PointTotal.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only allow the white levels through.
     def point_total_params
       params.require(:point_total).permit(:student_id, :date, :score, :absent)
     end

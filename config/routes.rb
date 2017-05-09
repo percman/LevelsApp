@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :users
   get 'changes', to: 'changes#index'
-  get 'list', to: 'list#index'
+  get 'levels', to: 'levels#index'
   root to: 'students#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

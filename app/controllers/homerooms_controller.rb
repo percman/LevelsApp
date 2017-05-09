@@ -67,7 +67,7 @@ class HomeroomsController < ApplicationController
       @homeroom = Homeroom.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only allow the white levels through.
     def homeroom_params
       params.require(:homeroom).permit(:name)
     end
