@@ -29,11 +29,11 @@ class Student < ApplicationRecord
 
   def keep_level
     out_of=7
-    if level=='1' ||level=='OR'||level=='5B'
+    if level=='1' || level=='5B'
       return 'N/A'
     elsif level=='2'
       must_succeed=4
-    elsif level=='3'
+    elsif level=='3' || level=='OR'
       must_succeed=5
     elsif level=='4'||level=='5'
       must_succeed=6
