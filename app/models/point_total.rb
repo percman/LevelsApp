@@ -10,7 +10,7 @@ class PointTotal < ApplicationRecord
     if absent?
       return nil
     end
-    if (student.level=='1' && score>=70) || ((student.level=='2'||student.level=='OR')&&score>=80)||(student.level=='3'&& score>=85)
+    if (student.level=='1' && score>=70) || (student.level=='2' && score >=80) || (student.level=='OR' && score>=75)||(student.level=='3'&& score>=85)
       return "yes"
     elsif score>=90
       return "yes"
