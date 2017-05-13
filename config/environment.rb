@@ -10,6 +10,6 @@ ActionMailer::Base.smtp_settings = {
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'https://peaceful-earth-91539.herokuapp.com',
+    :domain         => 'https://ricabaltimore.herokuapp.com',
     :enable_starttls_auto => true
 }
